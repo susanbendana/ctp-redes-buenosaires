@@ -16,13 +16,22 @@
     </div>
   </header>
 
-  <nav class="nav">
+ <nav class="nav">
+  <!-- Botón del menú hamburguesa (visible en móviles) -->
+  <button class="menu-toggle" onclick="document.querySelector('.menu-links').classList.toggle('active')">
+    ☰
+  </button>
+
+  <!-- Enlaces del menú -->
+  <div class="menu-links">
     <a href="#decimo">Décimo Año</a>
     <a href="#undecimo">Undécimo Año</a>
     <a href="#duodecimo">Duodécimo Año</a>
     <a href="#certificaciones">Certificaciones</a>
     <a href="#perfil">Perfil del Egresado</a>
-  </nav>
+  </div>
+</nav>
+
 
   <main>
     <section id="decimo" class="section">
