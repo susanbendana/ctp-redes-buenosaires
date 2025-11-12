@@ -1,4 +1,4 @@
-
+/* === ESTILO GENERAL === */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -6,65 +6,189 @@ body {
   background: linear-gradient(to bottom, #2e7d32, #1565c0, #f4f4f4);
   color: #333;
 }
+
+/* === ENCABEZADO === */
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  text-align: center;
 }
+
 .logo {
   width: 100px;
-  margin-right: 20px;
+  margin: 10px 20px;
+  transition: width 0.3s ease;
 }
+
+.header-text h1 {
+  margin: 0;
+  color: #1565c0;
+  font-size: 1.6rem;
+}
+
+.header-text h2 {
+  margin: 5px 0 0;
+  color: #2e7d32;
+  font-size: 1.1rem;
+}
+
+/* === NAVEGACIÓN === */
 .nav {
-  text-align: center;
   background: #1565c0;
   padding: 10px;
+  text-align: center;
+  position: relative;
 }
+
 .nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
+  transition: color 0.2s;
 }
+
 .nav a:hover {
-  text-decoration: underline;
+  color: #c8e6c9;
 }
+
+/* === BOTÓN HAMBURGUESA === */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.menu-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* === SECCIONES === */
 .section {
   padding: 40px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.9);
   margin: 20px auto;
   max-width: 900px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .section.alt {
-  background: rgba(240,240,240,0.95);
+  background: rgba(240, 240, 240, 0.95);
 }
+
+.section h2 {
+  color: #2e7d32;
+  text-align: center;
+}
+
 .card {
   background: #fff;
   padding: 20px;
   margin: 15px 0;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
 .card h3 {
   color: #1565c0;
 }
+
+/* === CERTIFICACIONES === */
+.cert-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cert-logos img {
+  margin: 10px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Ajustes de tamaño para logos */
+.cert-logos img[alt*="NetAcad"] {
+  width: 160px; /* un poco más grande para equilibrar */
+}
+
+.cert-logos img[alt*="UTN"] {
+  width: 140px;
+}
+
+/* === PIE DE PÁGINA === */
 footer {
   text-align: center;
   background: #2e7d32;
   color: #fff;
-  padding: 15px;
+  padding: 20px;
   font-size: 14px;
 }
+
 .footer-tagline {
   font-style: italic;
   color: #e0f7fa;
 }
-.cert-logos img {
-  width: 120px;
-  margin: 10px;
+
+/* === RESPONSIVE (para celulares y tablets) === */
+@media (max-width: 768px) {
+  .logo {
+    width: 70px;
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-text h2 {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  /* Menú hamburguesa visible */
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: #1565c0;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .menu-links a {
+    margin: 8px 0;
+    font-size: 1.1rem;
+  }
+
+  .menu-links.active {
+    display: flex;
+  }
 }
